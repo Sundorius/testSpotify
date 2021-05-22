@@ -56,10 +56,14 @@ function handleRedirect(){
 function getCode(){
     let code = null;
     const queryString = window.location.search;
+    console.log("queryString");
+    console.log(queryString);
     if ( queryString.length > 0 ){
         const urlParams = new URLSearchParams(queryString);
         code = urlParams.get('code')
     }
+    console.log("CODE");
+    console.log(code);
     return code;
 }
 
