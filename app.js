@@ -109,6 +109,8 @@ function callAuthorizationApi(body){
 }
 
 function handleAuthorizationResponse(){
+    console.log("status");
+    console.log(this.status);
     if ( this.status == 200 ){
         var data = JSON.parse(this.responseText);
         console.log(data);
