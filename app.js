@@ -24,7 +24,7 @@ const CURRENTLYPLAYING = "https://api.spotify.com/v1/me/player/currently-playing
 const SHUFFLE = "https://api.spotify.com/v1/me/player/shuffle";
 
 function onPageLoad(){
-    connsole.log("HII");
+    console.log("HII");
     client_id = localStorage.getItem("client_id");
     client_secret = localStorage.getItem("client_secret");
     if ( window.location.search.length > 0 ){
