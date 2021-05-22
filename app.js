@@ -1,9 +1,8 @@
-var redirect_uri = "https://sundorius.github.io/testSpotify/"; // change this your value
-//var redirect_uri = "http://127.0.0.1:5500/index.html";
+var redirect_uri = "https://sundorius.github.io/testSpotify/"; 
  
 
 var client_id = ""; 
-var client_secret = ""; // In a real app you should not expose your client_secret to the user
+var client_secret = ""; 
 
 var access_token = null;
 var refresh_token = null;
@@ -24,7 +23,6 @@ const CURRENTLYPLAYING = "https://api.spotify.com/v1/me/player/currently-playing
 const SHUFFLE = "https://api.spotify.com/v1/me/player/shuffle";
 
 function onPageLoad(){
-    console.log("HII");
     client_id = localStorage.getItem("client_id");
     client_secret = localStorage.getItem("client_secret");
     if ( window.location.search.length > 0 ){
@@ -56,8 +54,6 @@ function handleRedirect(){
 function getCode(){
     let code = null;
     const queryString = window.location.search;
-    console.log("queryString");
-    console.log(queryString);
     if ( queryString.length > 0 ){
         const urlParams = new URLSearchParams(queryString);
         code = urlParams.get('code')
@@ -109,8 +105,6 @@ function callAuthorizationApi(body){
 }
 
 function handleAuthorizationResponse(){
-    console.log("status");
-    console.log(this.status);
     if ( this.status == 200 ){
         var data = JSON.parse(this.responseText);
         console.log(data);
